@@ -13,14 +13,14 @@ algorithm described in the 2021 undergraduate report.
 
 from __future__ import annotations
 
+from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
 from itertools import combinations, product
-from typing import Any, Iterable, Sequence
+from typing import Any
 
 import numpy as np
 
 from .lattices import Lattice
-from .reciprocal import reciprocal_vectors
 
 
 def _basis(value: Any) -> np.ndarray:
@@ -144,7 +144,7 @@ def _edges_from_faces(faces: Sequence[Sequence[int]]) -> tuple[tuple[int, int], 
     return tuple(sorted(edges))
 
 
-def _construct_zone(reciprocal_basis: np.ndarray, normals: np.ndarray, tolerance: float) -> "BrillouinZone":
+def _construct_zone(reciprocal_basis: np.ndarray, normals: np.ndarray, tolerance: float) -> BrillouinZone:
     """Construct a zone for an already selected set of reciprocal vectors."""
 
     offsets = 0.5 * np.einsum("ij,ij->i", normals, normals)

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any
 
 import numpy as np
 
@@ -38,7 +38,7 @@ def plot_brillouin_zone(
     edge_color: str = "#17324D",
     alpha: float = 0.35,
     show_vertices: bool = True,
-    title: Optional[str] = None,
+    title: str | None = None,
 ) -> Any:
     """Plot a zone as a translucent 3-D convex polyhedron.
 
@@ -78,12 +78,12 @@ def plot_symmetry_reduction(
     zone: BrillouinZone,
     points: Any,
     *,
-    lattice: Optional[Lattice] = None,
+    lattice: Lattice | None = None,
     operations: Any = None,
     ax: Any = None,
     all_color: str = "#B8C6D9",
     reduced_color: str = "#F58518",
-    title: Optional[str] = None,
+    title: str | None = None,
 ) -> Any:
     """Plot an input point cloud and one representative from each orbit."""
 
@@ -126,7 +126,7 @@ def sample_cartesian_grid(zone: BrillouinZone, points_per_axis: int = 15) -> np.
 
 
 def plot_reciprocal_lattice(
-    reciprocal_points: Any, *, ax: Any = None, title: Optional[str] = None
+    reciprocal_points: Any, *, ax: Any = None, title: str | None = None
 ) -> Any:
     """Plot reciprocal-lattice points as a 3-D scatter plot."""
 

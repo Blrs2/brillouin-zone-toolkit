@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
 from itertools import permutations, product
-from typing import Any, Iterable
+from typing import Any
 
 import numpy as np
 

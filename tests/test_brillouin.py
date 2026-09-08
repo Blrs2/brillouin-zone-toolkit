@@ -1,4 +1,5 @@
 import unittest
+from typing import ClassVar
 
 import numpy as np
 
@@ -8,7 +9,7 @@ from brillouin_zone_toolkit import bcc, fcc, first_brillouin_zone, hexagonal, si
 class BrillouinZoneTests(unittest.TestCase):
     # (vertices, faces) of the Wigner--Seitz cells of reciprocal SC, BCC, FCC,
     # and hexagonal lattices, respectively.
-    expected = {
+    expected: ClassVar[dict[str, tuple[int, int]]] = {
         "sc": (8, 6),
         "fcc": (24, 14),
         "bcc": (14, 12),

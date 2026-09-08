@@ -8,8 +8,9 @@ primitive cell and uses the crystallographic convention ``a_1 · a_2 < 0``.
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Any, Mapping
+from typing import Any
 
 import numpy as np
 
@@ -83,7 +84,7 @@ class Lattice:
 
         return abs(float(np.linalg.det(self.reciprocal_vectors)))
 
-    def copy(self, *, name: str | None = None) -> "Lattice":
+    def copy(self, *, name: str | None = None) -> Lattice:
         """Return an independent lattice object, optionally renamed."""
 
         return Lattice(self.vectors.copy(), self.name if name is None else name)

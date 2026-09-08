@@ -35,9 +35,10 @@ from .symmetry import (
 __version__ = "0.1.0"
 
 __all__ = [
-    "Lattice",
     "BrillouinZone",
+    "Lattice",
     "SymmetryReduction",
+    "__version__",
     "bcc",
     "body_centered_cubic",
     "direct_reciprocal_duality",
@@ -45,16 +46,15 @@ __all__ = [
     "fcc",
     "first_brillouin_zone",
     "hexagonal",
+    "irreducible_wedge",
     "lattice_symmetry_operations",
     "make_lattice",
-    "reciprocal_lattice_points",
     "reciprocal_cell_volume",
+    "reciprocal_lattice_points",
     "reciprocal_vectors",
     "reduce_points",
     "reduce_points_with_orbits",
     "simple_cubic",
     "symmetry_orbit",
     "symmetry_reduce",
-    "irreducible_wedge",
-    "__version__",
 ]
