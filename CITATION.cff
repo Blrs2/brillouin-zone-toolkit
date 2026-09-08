@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Brillouin-zone toolkit"
+message: "If you use this reconstruction, please cite it and the original 2021 report separately."
+type: software
+authors:
+  - family-names: Salomon
+    given-names: "Bruno Leão Rennó"
+version: 0.1.0
+date-released: 2026-09-08
+license: MIT
+abstract: >-
+  A reproducible Python reconstruction of reciprocal-lattice, first-Brillouin-zone,
+  and crystal-symmetry calculations described in a 2021 undergraduate report.
+keywords:
+  - Brillouin zone
+  - reciprocal lattice
+  - crystallography
+  - solid-state physics

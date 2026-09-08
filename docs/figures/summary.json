@@ -1,0 +1,35 @@
+{
+  "sc": {
+    "lattice": "simple cubic (SC)",
+    "vertices": 8,
+    "faces": 6,
+    "volume": 248.05021344239856,
+    "reciprocal_cell_volume": 248.05021344239844
+  },
+  "fcc": {
+    "lattice": "face-centred cubic (FCC)",
+    "vertices": 24,
+    "faces": 14,
+    "volume": 992.2008537695951,
+    "reciprocal_cell_volume": 992.200853769594
+  },
+  "bcc": {
+    "lattice": "body-centred cubic (BCC)",
+    "vertices": 14,
+    "faces": 12,
+    "volume": 496.100426884797,
+    "reciprocal_cell_volume": 496.10042688479695
+  },
+  "hexagonal": {
+    "lattice": "hexagonal",
+    "vertices": 12,
+    "faces": 8,
+    "volume": 175.39798799989043,
+    "reciprocal_cell_volume": 175.39798799989043
+  },
+  "fcc-symmetry-reduction": {
+    "sampled_points": 2361,
+    "representatives": 89,
+    "operations": 48
+  }
+}

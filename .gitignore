@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Generated build artefacts
+build/
+dist/
+htmlcov/
+.coverage
+
+# Reproducible figures are kept in docs/figures; ignore ad-hoc exports.
+*.pdf~
+*.png~
+
+# Academic source PDFs stay in the local archive until redistribution rights are confirmed.
+docs/*.pdf
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
