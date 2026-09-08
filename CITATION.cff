@@ -9,8 +9,9 @@ version: 0.1.0
 date-released: 2026-09-08
 license: MIT
 abstract: >-
-  A reproducible Python reconstruction of reciprocal-lattice, first-Brillouin-zone,
-  and crystal-symmetry calculations described in a 2021 undergraduate report.
+  A reproducible Fortran 90 implementation of reciprocal-lattice,
+  first-Brillouin-zone, and crystal-symmetry calculations described in a 2021
+  undergraduate report.
 keywords:
   - Brillouin zone
   - reciprocal lattice

@@ -1,24 +1,27 @@
-name: CI
+name: Fortran 90 CI
 
 on:
   push:
   pull_request:
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-          cache: pip
-      - name: Install package and test dependencies
-        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
-      - name: Run tests
-        run: python -m pytest
-      - name: Lint
-        run: python -m ruff check src tests scripts
+      - name: Install GNU Fortran
+        run: sudo apt-get update && sudo apt-get install --yes gfortran
+      - name: Compile demo with strict Fortran 95 checks
+        run: >-
+          gfortran -std=f95 -Wall -Wextra -pedantic -O2
+          -Jbuild -o build/brillouin_demo
+          fortran/brillouin90.f90 programs/brillouin_demo.f90
+      - name: Run demo regression checks
+        run: ./build/brillouin_demo
+      - name: Compile unit checks with runtime bounds checking
+        run: >-
+          gfortran -std=f95 -Wall -Wextra -pedantic -O2 -fcheck=all
+          -Jbuild -o build/test_brillouin
+          fortran/brillouin90.f90 tests_fortran/test_brillouin.f90
+      - name: Run unit checks
+        run: ./build/test_brillouin
